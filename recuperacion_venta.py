@@ -17,7 +17,7 @@ def mostrar_resultado(nombre_producto,subtotal,descuento,total):
 cond = True
 
 while cond:
-#### ENTRADA
+    #### ENTRADA
     nombre_producto = str(input("Ingrese en nombre del producto: "))
     if nombre_producto and nombre_producto != "":
         ### Verificacion de precio producto
@@ -44,6 +44,23 @@ while cond:
         descuento = calcular_descuento(subtotal)
         # calcular total
         total_pago = subtotal - descuento
-        
-    #### SALIDA
+
+        #### SALIDA
+        mostrar_resultado(nombre_producto,subtotal,descuento,total_pago)
+
         # condicion de cierre
+        while True:
+            condicion = str(input("¿Desea realizar otra venta (s/n)?: "))
+            
+            if condicion in("n","N"):
+                print("Programa finalizado.")
+                cond = False
+                break
+            elif condicion in("s","S"):
+                break
+            else:
+                print("Opcion ingresada no es valida.")
+
+
+
+
